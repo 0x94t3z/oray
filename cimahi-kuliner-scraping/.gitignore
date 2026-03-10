@@ -12,6 +12,3 @@ __pycache__/
 # Local environment
 venv/
 .env
-
-# Generated output
-cimahi_business_data.csv

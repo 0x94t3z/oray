@@ -178,6 +178,7 @@ def main(entry_file: str | Path | None = None, files: ProjectFiles | None = None
         print("Total data:", len(df))
         return
 
+    project_files.output_dir.mkdir(parents=True, exist_ok=True)
     df.to_csv(project_files.output_csv, index=False)
     print(f"[INFO] CSV diperbarui: {project_files.output_csv.name}")
     print(

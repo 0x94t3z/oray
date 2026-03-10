@@ -6,6 +6,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 OUTPUT_FILE = "cimahi_business_data.csv"
+OUTPUT_DIR = "generated"
 DEFAULT_MAX_OUTPUT_ROWS = 1000
 
 REQUEST_TIMEOUT = 25
@@ -138,6 +139,7 @@ SEARCH_TARGETS = (
 @dataclass(frozen=True)
 class ProjectFiles:
     base_dir: Path
+    output_dir: Path
     output_csv: Path
     env_files: tuple[Path, ...]
 
@@ -147,9 +149,11 @@ class ProjectFiles:
 
     @classmethod
     def from_base_dir(cls, base_dir: Path) -> "ProjectFiles":
+        output_dir = base_dir / OUTPUT_DIR
         return cls(
             base_dir=base_dir,
-            output_csv=base_dir / OUTPUT_FILE,
+            output_dir=output_dir,
+            output_csv=output_dir / OUTPUT_FILE,
             env_files=(
                 base_dir / ".env",
                 base_dir / "venv" / ".env",
