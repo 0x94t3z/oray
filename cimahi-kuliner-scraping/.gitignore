@@ -1,9 +1,17 @@
+# OS files
 .DS_Store
+
+# Python caches
 __pycache__/
 *.pyc
+*.pyo
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
+# Local environment
 venv/
 .env
 
+# Generated output
 cimahi_business_data.csv
