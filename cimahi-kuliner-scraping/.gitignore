@@ -1,0 +1,9 @@
+.DS_Store
+__pycache__/
+*.pyc
+.pytest_cache/
+
+venv/
+.env
+
+cimahi_business_data.csv
